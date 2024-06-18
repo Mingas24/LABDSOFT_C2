@@ -1,0 +1,57 @@
+<div class="row">
+  <mat-form-field class="filter" appearance="fill">
+    <mat-label> {{ filterPlaceHolder }} </mat-label>
+    <input
+      matInput
+      type="text"
+      [(ngModel)]="filterValue"
+      (keyup.enter)="clickFindByText(filterValue)"
+      [placeholder]="filterPlaceHolder"
+    />
+    <button
+      mat-button
+      *ngIf="filterValue"
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="clickFindByText((filterValue = ''))"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <div class="edit_button">
+    <button
+      *ngIf="showAddBtn"
+      mat-icon-button
+      class="add-button"
+      matTooltip="Adicionar"
+      (click)="clickAddRecipient()"
+      [disabled]="disableAddBtn"
+    >
+      <span class="material-icons">add</span>
+    </button>
+
+    <button
+      *ngIf="showAddDonorBtn"
+      mat-icon-button
+      class="add-button"
+      matTooltip="Adicionar"
+      (click)="clickAddDonor()"
+      [disabled]="disableAddDonorBtn"
+    >
+      <span class="material-icons">add</span>
+    </button>
+
+    <button
+      *ngIf="showEditBtn"
+      mat-icon-button
+      class="edit-button"
+      matTooltip="Editar"
+      (click)="clickEdit()"
+      [disabled]="disableEditbtn"
+    >
+      <span class="material-icons">mode_edit</span>
+    </button>
+  </div>
+</div>

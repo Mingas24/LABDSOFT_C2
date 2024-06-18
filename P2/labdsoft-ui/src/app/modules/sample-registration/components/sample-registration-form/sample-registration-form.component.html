@@ -1,0 +1,8 @@
+<dynamic-form
+  title="Registar amostra de órgão"
+  *ngIf="!isLoading"
+  [fields]="sampleRegistrationFormAssembler.FORM_SPECIFICATION"
+  [mode]="mode"
+  (onSubmit)="onSubmitForm($event)"
+>
+</dynamic-form>

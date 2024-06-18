@@ -1,0 +1,54 @@
+
+<div class="title">
+  <h1>{{ title }}</h1>
+  <button
+    *ngIf="showReturnBtn"
+    mat-flat-button
+    class="addButton return"
+    value="bold"
+    [routerLink]="''"
+    (click)="return()"
+  >
+    Voltar
+  </button>
+</div>
+
+<div>
+  <form
+    (ngSubmit)="onSubmit.emit(this.form.value)"
+    [formGroup]="form"
+    class="dynamic-form"
+  >
+    <div *ngFor="let field of fields" class="field">
+      <field-builder
+        [mode]="mode"
+        [field]="field"
+        [form]="form"
+      ></field-builder>
+    </div>
+    <div class="form-actions">
+      <button
+        *ngIf="mode === ModeEnum.NEW || editMode"
+        type="submit"
+        [disabled]="!form.valid"
+        [ngClass]="form.valid ? 'button-submit' : 'button-disabled'"
+      >
+        Guardar
+      </button>
+      <button
+        *ngIf="mode === ModeEnum.SHOW_INFO && !editMode"
+        class="button-submit"
+        (click)="toggleEditMode()"
+      >
+        Editar
+      </button>
+      <button
+        *ngIf="mode === ModeEnum.SHOW_INFO && editMode"
+        class="negative-button"
+        (click)="toggleEditMode()"
+      >
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

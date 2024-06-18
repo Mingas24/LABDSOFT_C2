@@ -1,0 +1,8 @@
+{
+    "websiteTitle": "Cito",
+    "serviceRestUrl": "http://localhost:8080",
+    "serviceWsUrl": "ws://localhost:4200",
+    "ssoUrl": "http://localhost:8080",
+    "fileDetailsRowCount": 100,
+    "useMetadataCache": false
+}

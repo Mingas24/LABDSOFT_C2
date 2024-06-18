@@ -1,0 +1,9 @@
+<dynamic-form
+  title="Adicionar Aderentes"
+  [showReturnBtn]="true"
+  *ngIf="!isLoading"
+  [fields]="adherentFormAssembler.FORM_SPECIFICATION"
+  [mode]="mode"
+  (onSubmit)="onSubmitForm($event)"
+>
+</dynamic-form>

@@ -1,0 +1,9 @@
+
+<dynamic-form
+  title="Adicionar Recetores"
+  *ngIf="!isLoading"
+  [fields]="transplantRecipientFormAssembler.FORM_SPECIFICATION"
+  [mode]="mode"
+  [showReturnBtn]="true"
+  (onSubmit)="onSubmitForm($event)"
+></dynamic-form>

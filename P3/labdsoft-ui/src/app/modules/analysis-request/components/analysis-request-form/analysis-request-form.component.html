@@ -1,0 +1,8 @@
+<dynamic-form
+  title="Efetuar pedido de análise"
+  *ngIf="!isLoading"
+  [fields]="analysisRequestFormAssembler.FORM_SPECIFICATION"
+  [mode]="mode"
+  (onSubmit)="onSubmitForm($event)"
+>
+</dynamic-form>

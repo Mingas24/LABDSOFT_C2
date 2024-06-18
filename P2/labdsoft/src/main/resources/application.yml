@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  jpa:
+    show-sql: false
+    open-in-view: false
+    database: postgresql
+    generate-ddl: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL9Dialect
+        default_schema: cito
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/CITO
+    username: admin
+    password: labdsoft_c2
+  security:
+    debug: false
+    unauthenticated-routes: /auth/login,/user,/swagger-ui*/**, /cito-openapi/**
+    jwt:
+      secret: eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJhcnFzb2Z0MjAxIiwiVXNlcm5hbWUiOiJKYXZhSW5Vc2UiLCJleHAiOjE2MzY2Nzk3NTEsImlhdCI6MTYzNjY3OTc1MX0.lFk6g_8Mro4_6FMZP01kO-YGIzXAR6t0ImOlWDtoheA
+
+    ## Para configuração da DB:
+    ##  - devem criar um super user com username "admin" e palavra-passe "labdsoft_c2"
+    ##  - create database CITO; (correr este comando direto na base de dados)
+springdoc:
+  api-docs:
+    path: /cito-openapi

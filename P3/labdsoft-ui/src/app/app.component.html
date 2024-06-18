@@ -1,0 +1,12 @@
+<section [ngClass]="{ 'login-page': !isLoggedIn }">
+  <ng-container *ngIf="!isLoggedIn" class="login">
+    <app-login></app-login>
+  </ng-container>
+
+  <ng-container *ngIf="isLoggedIn && !loading">
+    <app-nav></app-nav>
+    <div class="main-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+  </ng-container>
+</section>

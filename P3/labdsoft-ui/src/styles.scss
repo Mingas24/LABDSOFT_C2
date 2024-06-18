@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import "~@angular/material/theming";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@include mat-core();
+
+$theming-material-components-primary: mat-palette($mat-indigo);
+$theming-material-components-accent: mat-palette($mat-pink, A200, A100, A400);
+$theming-material-components-warn: mat-palette($mat-red);
+$theming-material-components-theme: mat-light-theme(
+  $theming-material-components-primary,
+  $theming-material-components-accent,
+  $theming-material-components-warn
+);
+@include angular-material-theme($theming-material-components-theme);
+
+html,
+body {
+  font-family: 'Quicksand', sans-serif !important;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+select {
+  font-family: 'Quicksand', sans-serif !important;
+  border-radius: 1em;
+  border: solid 2px #e9e9e9;
+  padding: 5px;
+}
+
+button {
+  border-radius: 1em;
+  border: none;
+  cursor: pointer;
+  padding: 5px 40px 5px 40px;
+  font-weight: 700;
+  font-size: 16px;
+  border: solid 2px transparent;
+}
+
+input:focus-visible,
+select:focus-visible {
+  border: solid 2px #54b3d6;
+  outline: none;
+}
+
+.negative-button {
+  background-color: white;
+  border-color: red;
+  color: red;
+}
+
+.negative-button:hover {
+  background-color: red;
+  color: white;
+}

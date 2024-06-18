@@ -1,0 +1,9 @@
+<dynamic-form
+  title="Adicionar Dadores"
+  [showReturnBtn]="true"
+  *ngIf="!isLoading"
+  [fields]="transplantDonorFormAssembler.FORM_SPECIFICATION"
+  [mode]="mode"
+  (onSubmit)="onSubmitForm($event)"
+>
+</dynamic-form>

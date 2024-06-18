@@ -1,0 +1,23 @@
+# Distribuição de Tarefas
+
+- Estrutura dinâmica de tabela no FE - Daniel
+- Estrutura dinâmica de forms no FE - Pedro
+- Registo inicial do dador - Daniel
+- Registo inicial do recetor - Pedro
+- Registo de amostras do dador - Daniela
+- Registo de amostras do recetor - Daniela
+- Registar desperdício de orgãos - Daniela
+- Registo de consulta do médico - André
+- Registo dos resultados das análises de sangue - Luís
+- Pedido das análises para o dador - Daniela
+- Pedido das análises para o recetor - Daniel
+- Mudança de estado do recetor - Daniel/Daniela
+- Validação dos resultados de sangue - Daniela
+- Listar dadores/recetores - Daniel
+- Localização de amostras com sugestão da localização
+- Configuração Health Tracker
+- Atribuição Health Tracker ao recetor - Daniel
+- Configurar análises - Daniela
+- Geração da lista final de recetores para envio para transplante
+- Criação da pipeline de deployment - Daniel
+- API para integração com equipamentos - Daniela

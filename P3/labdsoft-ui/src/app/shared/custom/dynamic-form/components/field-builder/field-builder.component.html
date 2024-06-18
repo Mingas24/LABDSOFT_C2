@@ -1,0 +1,28 @@
+<div class="field-item" [formGroup]="form">
+  <label class="label-item" [attr.for]="field.label">
+    {{ field.label }}
+    <strong class="text-danger" *ngIf="field.required">*</strong>
+  </label>
+  <div [ngSwitch]="field.type" class="input-item">
+    <text *ngSwitchCase="'text'" [field]="field" [form]="form"></text>
+    <readonly
+      *ngSwitchCase="'readonly'"
+      [field]="field"
+      [form]="form"
+    ></readonly>
+    <checkbox
+      *ngSwitchCase="'checkbox'"
+      [field]="field"
+      [form]="form"
+    ></checkbox>
+    <dropdown
+      *ngSwitchCase="'dropdown'"
+      [field]="field"
+      [form]="form"
+    ></dropdown>
+    <date *ngSwitchCase="'date'" [field]="field" [form]="form"></date>
+    <div class="invalid-feedback" *ngIf="!isValid && isDirty && field.required">
+      {{ field.label }} é obrigatório
+    </div>
+  </div>
+</div>

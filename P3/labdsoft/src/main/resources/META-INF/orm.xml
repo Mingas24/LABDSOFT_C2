@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+                 version="2.2">
+    <entity class="com.pt.isep.labdsoft.entity.auth.User" name="User" access="FIELD">
+        <sequence-generator name="generator" sequence-name="auth_user_seq" allocation-size="1" />
+    </entity>
+    <entity class="com.pt.isep.labdsoft.entity.domain.TransplantRecipient" name="TransplantRecipient" access="FIELD">
+        <sequence-generator name="generator" sequence-name="dom_transplant_recipient_seq" allocation-size="1" />
+    </entity>
+    <entity class="com.pt.isep.labdsoft.entity.domain.OrgansInNeed" name="OrgansInNeed" access="FIELD">
+        <sequence-generator name="generator" sequence-name="dom_organs_in_need_seq" allocation-size="1" />
+    </entity>
+    <entity class="com.pt.isep.labdsoft.entity.domain.HLATransplantRecipient" name="HLATransplantRecipient" access="FIELD">
+        <sequence-generator name="generator" sequence-name="dom_hla_transplant_recipient_seq" allocation-size="1" />
+    </entity>
+    <entity class="com.pt.isep.labdsoft.entity.domain.TransplantDonor" name="TransplantDonor" access="FIELD">
+        <sequence-generator name="generator" sequence-name="dom_transplant_donor_seq" allocation-size="1" />
+    </entity>
+    <entity class="com.pt.isep.labdsoft.entity.domain.OrgansToDonate" name="OrgansToDonate" access="FIELD">
+        <sequence-generator name="generator" sequence-name="dom_organs_to_donate_seq" allocation-size="1" />
+    </entity>
+    <entity class="com.pt.isep.labdsoft.entity.domain.HLATransplantDonor" name="HLATransplantDonor" access="FIELD">
+        <sequence-generator name="generator" sequence-name="dom_hla_transplant_donor_seq" allocation-size="1" />
+    </entity>
+    <entity class="com.pt.isep.labdsoft.entity.domain.OrganWastage" name="OrganWastage" access="FIELD">
+        <sequence-generator name="generator" sequence-name="dom_organ_wastage_seq" allocation-size="1" />
+    </entity>
+    <entity class="com.pt.isep.labdsoft.entity.domain.HealthActivityTracker" name="HealthActivityTracker" access="FIELD">
+        <sequence-generator name="generator" sequence-name="dom_health_activity_tracker_seq" allocation-size="1" />
+    </entity>
+    <entity class="com.pt.isep.labdsoft.entity.domain.HealthActivityTrackerAssociation" name="HealthActivityTrackerAssociation" access="FIELD">
+        <sequence-generator name="generator" sequence-name="dom_health_activity_tracker_association_seq" allocation-size="1" />
+    </entity>
+    <entity class="com.pt.isep.labdsoft.entity.domain.DonorSample" name="DonorSample" access="FIELD">
+        <sequence-generator name="generator" sequence-name="dom_donor_sample_seq" allocation-size="1" />
+    </entity>
+    <entity class="com.pt.isep.labdsoft.entity.domain.RecipientSample" name="RecipientSample" access="FIELD">
+        <sequence-generator name="generator" sequence-name="dom_recipient_sample_seq" allocation-size="1" />
+    </entity>
+    <entity class="com.pt.isep.labdsoft.entity.domain.DonorAnalysisRequest" name="DonorAnalysisRequest" access="FIELD">
+        <sequence-generator name="generator" sequence-name="dom_donor_analysis_request_seq" allocation-size="1" />
+    </entity>
+    <entity class="com.pt.isep.labdsoft.entity.domain.RecipientAnalysisRequest" name="RecipientAnalysisRequest" access="FIELD">
+        <sequence-generator name="generator" sequence-name="dom_recipient_analysis_request_seq" allocation-size="1" />
+    </entity>
+    <entity class="com.pt.isep.labdsoft.entity.domain.TransplantCandidate" name="TransplantCandidate" access="FIELD">
+        <sequence-generator name="generator" sequence-name="dom_transplant_candidate_seq" allocation-size="1" />
+    </entity>
+    <entity class="com.pt.isep.labdsoft.entity.domain.VitalSigns" name="VitalSigns" access="FIELD">
+        <sequence-generator name="generator" sequence-name="dom_vital_signs_seq" allocation-size="1" />
+    </entity>
+    <!--
+    Para mapear sequências da DB aquando de um novo registo (a sequência deve ser criada nos scripts da DB com o mesmo nome do "sequence_name")
+    (é normal sequence-name aparecer a vermelho)
+    -->
+</entity-mappings>

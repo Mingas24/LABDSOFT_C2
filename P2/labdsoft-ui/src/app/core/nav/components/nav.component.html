@@ -1,0 +1,96 @@
+<nav>
+  <div class="user-details-wrapper">
+    <div class="user-profile-picture"></div>
+    <span class="user-display-name">{{ user.fullName }}</span>
+  </div>
+  <div class="links-wrapper">
+    <ul>
+      <li>
+        <a
+          [routerLink]="['/transplant-recipients/list']"
+          data-replace="Recetores"
+          *ngIf="user.role === 'ADMIN' || user.role === 'MEDICO'"
+          ><span>Recetores</span></a
+        >
+      </li>
+      <li>
+        <a
+          [routerLink]="['/transplant-donors/list']"
+          data-replace="Dadores"
+          *ngIf="user.role === 'ADMIN' || user.role === 'MEDICO'"
+          ><span>Dadores</span></a
+        >
+      </li>
+      <li>
+        <a
+          [routerLink]="['/organ-wastage']"
+          data-replace="Registar desperdício de orgãos"
+          *ngIf="
+            user.role === 'ADMIN' ||
+            user.role === 'MEDICO' ||
+            user.role === 'ENFERMEIRO' ||
+            user.role === 'DLABORATORIO' ||
+            user.role === 'TLABORATORIO' ||
+            user.role === 'TCOLHEITA'
+          "
+          ><span>Registar desperdício de orgãos</span></a
+        >
+      </li>
+      <li>
+        <a
+          [routerLink]="['/sample-registration']"
+          data-replace="Registar amostra"
+          *ngIf="
+            user.role === 'ADMIN' ||
+            user.role === 'MEDICO' ||
+            user.role === 'ENFERMEIRO' ||
+            user.role === 'DLABORATORIO' ||
+            user.role === 'TLABORATORIO'
+          "
+          ><span>Registar amostra</span></a
+        >
+      </li>
+      <li>
+        <a
+          [routerLink]="['/appointments']"
+          data-replace="Consultas"
+          *ngIf="user.role === 'ADMIN' || user.role === 'MEDICO'"
+          ><span>Registar consulta</span></a
+        >
+      </li>
+      <li>
+        <a
+          [routerLink]="['/analysis-request']"
+          data-replace="Pedido de análises"
+          *ngIf="
+            user.role === 'ADMIN' ||
+            user.role === 'MEDICO' ||
+            user.role === 'ENFERMEIRO' ||
+            user.role === 'DLABORATORIO' ||
+            user.role === 'TLABORATORIO'
+          "
+          ><span>Pedido de análises</span></a
+        >
+      </li>
+      <li>
+        <a
+          [routerLink]="['/health-activity-tracker']"
+          data-replace="Health Activity Tracker"
+          *ngIf="user.role === 'ADMIN' || user.role === 'MEDICO'"
+          ><span>Health Activity Tracker</span></a
+        >
+      </li>
+      <li>
+        <a
+          [routerLink]="['/analysis-results']"
+          data-replace="Resultados das análises"
+          *ngIf="user.role === 'ADMIN' || user.role === 'DLABORATORIO'"
+          ><span>Resultados das análises</span></a
+        >
+      </li>
+    </ul>
+  </div>
+  <div class="user-actions-wrapper">
+    <button class="negative-button" (click)="logout()">Logout</button>
+  </div>
+</nav>

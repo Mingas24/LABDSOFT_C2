@@ -1,0 +1,49 @@
+pipelines:
+  default:
+    - parallel:
+      - step:
+          name: Build and Test
+          image: maven:3.8.6
+          caches:
+            - maven
+          script:
+            - cd P3/labdsoft-equipments
+            - mvn -B verify --file pom.xml
+          after-script:
+            - pipe: atlassian/checkstyle-report:0.3.0
+      - step:
+          name: Build and Test
+          image: maven:3.8.6
+          caches:
+            - maven
+          script:
+            - cd P3/health-tracker
+            - mvn -B verify --file pom.xml
+          after-script:
+            - pipe: atlassian/checkstyle-report:0.3.0
+      - step:
+          name: Build and Test
+          image: maven:3.8.6
+          caches:
+            - maven
+          script:
+            - cd P3/labdsoft
+            - mvn -B verify --file pom.xml
+          after-script:
+            - pipe: atlassian/checkstyle-report:0.3.0
+      - step:
+          name: Security Scan
+          script:
+            - pipe: atlassian/git-secrets-scan:0.5.1
+      - step:
+          name: labdsoft-ui - Build and Test
+          image: node:16
+          caches:
+            - labdsoft-ui
+          script:
+            - cd P3/labdsoft-ui
+            - npm install --legacy-peer-deps
+            - npm run build
+definitions:
+  caches:
+    labdsoft-ui: P3/labdsoft-ui

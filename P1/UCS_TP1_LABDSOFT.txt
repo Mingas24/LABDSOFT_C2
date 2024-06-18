@@ -1,0 +1,56 @@
+UC1 - Criar registo de recetor
+UC2 - Editar registo de recetor
+UC3 - Alterar estado de urgência
+UC4 - Criar perfil de utilizador
+UC5 - Atribuir role ao utilizador
+UC6 - Registar análises de amostras dos orgãos
+UC7 - Registar análises do recetor (DNA)
+UC8 - Registar análises do recetor (víricas)
+UC9 - Atribuição de orgão a um recetor (match)
+UC10 - Agendamento de análises da amostra do orgão
+UC11 - Agendamento de análises do recetor
+UC12 - Agendamento de consultas do recetor
+UC13 - Reagendamento de consultas do recetor
+UC14 - Cancelamento de consultas do recetor
+UC15 - Criar protocolo
+UC16 - Configurar limites para cada indicador clínico
+UC17 - Registar resultado do transplante
+UC18 - Validação das análises
+
+
+@startuml
+left to right direction
+
+actor Informático as informatico
+actor Médico as medico
+actor Enfermeiro as enfermeiro
+actor Laboratório as laboratorio
+
+usecase "Criar utilizador" as UC1
+usecase "Editar utilizador" as UC2
+usecase "Atribuir perfil ao utilizador" as UC3
+
+usecase "Inserir dados clínicos do utente" as UC4
+usecase "Alterar dados clínicos do utente" as UC5
+usecase "Agendamento de consultas do recetor" as UC6
+usecase "Agendamento de análise clínicas" as UC7
+
+usecase "Registar dados de análises de DNA do utente" as UC8
+usecase "Registar dados de análises de víricas do utente" as UC9
+
+usecase "Configurar limites para indicares clínicos (protocolo)" as UC10
+
+informatico --> UC1
+informatico --> UC2
+informatico --> UC3
+
+medico --> UC4
+medico --> UC5
+médico --> UC10
+
+laboratorio --> UC8
+laboratorio --> UC9
+
+
+
+@enduml

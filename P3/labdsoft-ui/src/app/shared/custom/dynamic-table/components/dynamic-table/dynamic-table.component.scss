@@ -1,0 +1,65 @@
+.title{
+    position: relative;
+}
+
+.clickable{
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.table-container{
+    height: calc(100% - 60px);
+    overflow: auto;
+}
+
+.mat-elevation-z8{
+    max-height: calc(100% - 60px);
+}
+
+.return{
+    position: absolute;
+    border: 1px solid #DDD;
+    height: 30px;
+    line-height: 30px;
+    width: 100px;
+}
+
+table {
+    width: 100%;
+  }
+  
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+
+  .return{
+    position: absolute;
+    right: 2%;
+    top: -3px;
+    padding: 0;
+    border: 1px solid #DDD;
+    height: 30px;
+    line-height: 30px;
+    width:100px;
+  }
+
+  .edit-icon{
+    width: 15px;
+    height: 15px;
+  }
+
+  .edit-icon:hover, .edit-icon:focus{
+    filter: invert(34%) sepia(85%) saturate(3521%) hue-rotate(276deg) brightness(52%) contrast(120%)
+  }
+  
+
+  .col-width-50{
+    min-width: 50px;
+    max-width: 50px;
+  }

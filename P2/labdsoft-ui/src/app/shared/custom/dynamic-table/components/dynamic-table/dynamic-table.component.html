@@ -1,0 +1,74 @@
+<div class="title">
+  <h1>{{ title }}</h1>
+  <button
+    *ngIf="showReturnBtn"
+    mat-flat-button
+    class="addButton return"
+    value="bold"
+    [routerLink]="''"
+  >
+    Voltar
+  </button>
+</div>
+
+<div class="page-overlay-wrapper" *ngIf="loading">
+  <div class="loader-container">
+    <mat-progress-spinner mode="inderterminate"></mat-progress-spinner>
+  </div>
+</div>
+
+<div *ngIf="listData" class="table-container">
+  <app-table-actions
+    class="filter"
+    [filterPlaceHolder]="filterPlaceHolder"
+    (findByText)="getData($event)"
+    [showEditBtn]="showEditBtn"
+    [disableEditBtn]="disableEditBtn"
+    [showAddBtn]="showAddBtn"
+    [showAddDonorBtn]="showAddDonorBtn"
+    [disableAddBtn]="disableAddBtn"
+    (edit)="editRecipient()"
+    (addRecipient)="addRecipient()"
+    (addDonor)="addDonor()"
+  >
+  </app-table-actions>
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+      <ng-container
+        *ngFor="let column of columns"
+        [matColumnDef]="column.value"
+      >
+        <mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          [class]="column.class"
+          [disabled]="column.disableHeaderSort"
+        >
+          {{ column.label }}
+        </mat-header-cell>
+
+        <ng-container>
+          <mat-cell *matCellDef="let row" [class]="column.class">
+            <span>
+              {{ row | objectValue: column.value }}
+            </span>
+          </mat-cell>
+        </ng-container>
+      </ng-container>
+    </table>
+
+    <mat-paginator
+      #paginator
+      class="paginator"
+      [length]="listData.totalElements"
+      [pageSize]="listData.size"
+      [pageSizeOptions]="[5, 10, 25, 50]"
+      (page)="pageEvent = $event; onPaginateChange($event)"
+      showFirstLastButton
+    ></mat-paginator>
+  </div>
+</div>
